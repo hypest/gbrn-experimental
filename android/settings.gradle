@@ -1,0 +1,3 @@
+rootProject.name = 'gbrn'
+
+include ':app'
