@@ -1,16 +1,29 @@
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
+// import { __ } from '@wordpress/i18n';
 
 /**
  * Internal dependencies
  */
-import './editor.scss';
+import React, { Component } from 'react';
+import {
+	Platform,
+	StyleSheet,
+	Text,
+	TextInput,
+	View
+  } from 'react-native';
+  
+// import './editor.scss';
 import PlainText from '../../plain-text';
 import { createBlock } from '../../api';
 
 export const name = 'core/code';
+
+export function __( text ) {
+	return text;
+}
 
 export const settings = {
 	title: __( 'Code' ),
@@ -55,14 +68,20 @@ export const settings = {
 
 	edit( { attributes, setAttributes, className } ) {
 		return (
-			<div className={ className }>
-				<PlainText
-					value={ attributes.content }
-					onChange={ ( content ) => setAttributes( { content } ) }
-					placeholder={ __( 'Write code…' ) }
-					aria-label={ __( 'Code' ) }
-				/>
-			</div>
+			<View>
+				<TextInput>
+					{ attributes.content }
+        		</TextInput>
+			</View>
+
+			// <div className={ className }>
+			// 	<PlainText
+			// 		value={ attributes.content }
+			// 		onChange={ ( content ) => setAttributes( { content } ) }
+			// 		placeholder={ __( 'Write code…' ) }
+			// 		aria-label={ __( 'Code' ) }
+			// 	/>
+			// </div>
 		);
 	},
 

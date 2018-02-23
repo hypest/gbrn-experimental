@@ -17,11 +17,16 @@ import {
 	uniqueId,
 } from 'lodash';
 
+export function __( text ) {
+	return text;
+}
+
+
 /**
  * WordPress dependencies
  */
-import { __ } from '@wordpress/i18n';
-import { applyFilters } from '@wordpress/hooks';
+// import { __ } from '@wordpress/i18n';
+import { applyFilters } from './rn/hooks';
 
 /**
  * Internal dependencies

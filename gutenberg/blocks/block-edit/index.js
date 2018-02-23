@@ -1,13 +1,20 @@
 /**
  * External dependencies
  */
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import { noop } from 'lodash';
 
 /**
  * WordPress dependencies
  */
-import { withFilters } from '@wordpress/components';
+// import { withFilters } from '@wordpress/components';
+
+export function withFilters( hookName ) {
+	return ( OriginalComponent ) => {
+		return OriginalComponent;
+	}
+}
 
 /**
  * Internal dependencies

@@ -8,7 +8,7 @@ import { get, isFunction, some } from 'lodash';
 /**
  * WordPress dependencies
  */
-import { applyFilters } from '@wordpress/hooks';
+import { applyFilters } from './rn/hooks';
 
 /**
  * Internal dependencies

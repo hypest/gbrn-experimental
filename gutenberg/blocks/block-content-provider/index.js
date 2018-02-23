@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { Component, RawHTML } from '@wordpress/element';
+import { Component, RawHTML } from '../../element';
 
 /**
  * Internal dependencies
