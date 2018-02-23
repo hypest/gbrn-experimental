@@ -26,6 +26,8 @@ export default class App extends Component<Props> {
   constructor(props) {
     super(props);
     console.log('info for registerCoreBlocks:\n' + registerCoreBlocks);
+    registerCoreBlocks();
+    console.log('run registerCoreBlocks finished');
   }
   render() {
     return (
