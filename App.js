@@ -12,6 +12,8 @@ import {
   View
 } from 'react-native';
 
+import { registerCoreBlocks } from './gutenberg/blocks/library'
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -21,6 +23,10 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor(props) {
+    super(props);
+    console.log('info for registerCoreBlocks:\n' + registerCoreBlocks);
+  }
   render() {
     return (
       <View style={styles.container}>

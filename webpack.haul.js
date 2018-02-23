@@ -6,6 +6,7 @@ module.exports = ({ platform, root }, defaults) => ({
     ...defaults.resolve,
     alias: {
       ...defaults.resolve.alias,
+      '@wordpress/element': path.join(root, 'gutenberg', 'element')
     }
   }
 });

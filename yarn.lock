@@ -23,10 +23,6 @@
     lodash.merge "^4.4.0"
     postcss "^5.0.21"
 
-"@wordpress/hooks@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@wordpress/hooks/-/hooks-1.1.4.tgz#6d8ad6f5da04cf21b50b690a9260b3045751b6dd"
-
 "@zamotany/react-proxy@3.0.0-alpha.4":
   version "3.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@zamotany/react-proxy/-/react-proxy-3.0.0-alpha.4.tgz#2eb819b5e0caa231be84c1b0e291aec07e089a8f"
