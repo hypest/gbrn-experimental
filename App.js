@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import { registerCoreBlocks } from './gutenberg/blocks/library'
+import { BlockEdit } from './gutenberg/blocks/block-edit'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -32,6 +33,9 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <BlockEdit
+          name="core/code"
+          attributes={{content: "this is some source code"}} />
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
