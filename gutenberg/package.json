@@ -97,7 +97,7 @@
 	},
 	"babel": {
 		"presets": [
-			"@wordpress/default"
+			"react-native"
 		],
 		"env": {
 			"gettext": {
