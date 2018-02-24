@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import 'element-closest';
+// import 'element-closest';
 
 /**
  * References:

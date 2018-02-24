@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { createBlobURL } from '../../../utils';
+import { createBlobURL } from '@wordpress/utils';
 
 /**
  * Browser dependencies

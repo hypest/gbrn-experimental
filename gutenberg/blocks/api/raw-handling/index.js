@@ -24,7 +24,7 @@ import tableNormaliser from './table-normaliser';
 import inlineContentConverter from './inline-content-converter';
 import embeddedContentReducer from './embedded-content-reducer';
 import { deepFilterHTML, isInvalidInline, isNotWhitelisted, isPlain, isInline } from './utils';
-import shortcodeConverter from './shortcode-converter';
+// import shortcodeConverter from './shortcode-converter';
 import slackMarkdownVariantCorrector from './slack-markdown-variant-corrector';
 
 /**
