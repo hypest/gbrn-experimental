@@ -7,6 +7,7 @@ module.exports = ({ platform, root }, defaults) => ({
     ...defaults.resolve,
     alias: {
       ...defaults.resolve.alias,
+      '@wordpress/i18n': path.join(root, 'gutenberg', 'i18n'),
       '@wordpress/element': path.join(root, 'gutenberg', 'element'),
       '@wordpress/utils': path.join(root, 'gutenberg', 'utils'),
       '@wordpress/hooks': path.join(root, 'gutenberg', 'blocks', 'api', 'rn', 'hooks'),

@@ -1,11 +1,7 @@
 /**
  * WordPress dependencies
  */
-// import { __ } from '@wordpress/i18n';
-
-export function __( text ) {
-	return text;
-}
+import { __ } from '@wordpress/i18n';
 
 /**
  * Block categories.

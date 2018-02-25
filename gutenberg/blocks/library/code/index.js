@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-// import { __ } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 
 /**
  * Internal dependencies
@@ -11,10 +11,6 @@ import PlainText from '../../plain-text';
 import { createBlock } from '../../api';
 
 export const name = 'core/code';
-
-export function __( text ) {
-	return text;
-}
 
 export const settings = {
 	title: __( 'Code' ),
