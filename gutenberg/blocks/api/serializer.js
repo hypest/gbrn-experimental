@@ -9,7 +9,7 @@ import isEqualShallow from 'is-equal-shallow';
  * WordPress dependencies
  */
 import { Component, cloneElement, renderToString } from '@wordpress/element';
-import { hasFilter, applyFilters } from './rn/hooks';
+import { hasFilter, applyFilters } from '@wordpress/hooks';
 
 /**
  * Internal dependencies

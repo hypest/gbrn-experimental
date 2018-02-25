@@ -26,7 +26,7 @@ export function __( text ) {
  * WordPress dependencies
  */
 // import { __ } from '@wordpress/i18n';
-import { applyFilters } from './rn/hooks';
+import { applyFilters } from '@wordpress/hooks';
 
 /**
  * Internal dependencies

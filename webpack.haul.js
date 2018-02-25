@@ -8,7 +8,8 @@ module.exports = ({ platform, root }, defaults) => ({
     alias: {
       ...defaults.resolve.alias,
       '@wordpress/element': path.join(root, 'gutenberg', 'element'),
-      '@wordpress/utils': path.join(root, 'gutenberg', 'utils')
+      '@wordpress/utils': path.join(root, 'gutenberg', 'utils'),
+      '@wordpress/hooks': path.join(root, 'gutenberg', 'blocks', 'api', 'rn', 'hooks'),
     }
   },
   module: {
