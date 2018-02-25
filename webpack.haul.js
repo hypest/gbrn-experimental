@@ -9,5 +9,15 @@ module.exports = ({ platform, root }, defaults) => ({
       '@wordpress/element': path.join(root, 'gutenberg', 'element'),
       '@wordpress/utils': path.join(root, 'gutenberg', 'utils')
     }
+  },
+  module: {
+    ...defaults.module,
+    rules: [
+      ...defaults.module.rules,
+      {
+        test: /\.pegjs/,
+        use: 'pegjs-loader',
+      },
+    ]
   }
 });
