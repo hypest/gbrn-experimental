@@ -7,13 +7,7 @@ import { noop } from 'lodash';
 /**
  * WordPress dependencies
  */
-// import { withFilters } from '@wordpress/components';
-
-export function withFilters( hookName ) {
-	return ( OriginalComponent ) => {
-		return OriginalComponent;
-	}
-}
+import { withFilters } from '@wordpress/components';
 
 /**
  * Internal dependencies

@@ -10,6 +10,9 @@ module.exports = ({ platform, root }, defaults) => ({
       '@wordpress/i18n': path.join(root, 'gutenberg', 'i18n'),
       '@wordpress/element': path.join(root, 'gutenberg', 'element'),
       '@wordpress/utils': path.join(root, 'gutenberg', 'utils'),
+      '@wordpress/components': path.join(root, 'gutenberg', 'components'),
+
+      // overrides
       '@wordpress/hooks': path.join(root, 'gutenberg', 'blocks', 'api', 'rn', 'hooks'),
     }
   },
