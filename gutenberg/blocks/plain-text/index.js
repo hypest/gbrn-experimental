@@ -17,7 +17,7 @@ function PlainText( { onChange, className, ...props } ) {
 	return (
 		<TextInput
 		    multiline={true}
-    		numberOfLines={4} />
+			{ ...props } />
 
 		// <TextareaAutosize
 		// 	className={ classnames( 'blocks-plain-text', className ) }

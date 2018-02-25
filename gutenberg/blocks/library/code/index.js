@@ -6,14 +6,6 @@
 /**
  * Internal dependencies
  */
-import {
-	Platform,
-	StyleSheet,
-	Text,
-	TextInput,
-	View
-  } from 'react-native';
-  
 // import './editor.scss';
 import PlainText from '../../plain-text';
 import { createBlock } from '../../api';
@@ -67,19 +59,13 @@ export const settings = {
 
 	edit( { attributes, setAttributes, className } ) {
 		return (
-			<View>
-				<TextInput>
-					{ attributes.content }
-        		</TextInput>
-			</View>
-
 			// <div className={ className }>
-			// 	<PlainText
-			// 		value={ attributes.content }
-			// 		onChange={ ( content ) => setAttributes( { content } ) }
-			// 		placeholder={ __( 'Write code…' ) }
-			// 		aria-label={ __( 'Code' ) }
-			// 	/>
+				<PlainText
+					value={ attributes.content }
+					onChange={ ( content ) => setAttributes( { content } ) }
+					placeholder={ __( 'Write code…' ) }
+					aria-label={ __( 'Code' ) }
+				/>
 			// </div>
 		);
 	},
