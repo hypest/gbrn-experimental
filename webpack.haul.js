@@ -1,3 +1,4 @@
+const webpack = require('webpack'); //to access built-in plugins
 const path = require('path');
 
 module.exports = ({ platform, root }, defaults) => ({
@@ -19,5 +20,11 @@ module.exports = ({ platform, root }, defaults) => ({
         use: 'pegjs-loader',
       },
     ]
-  }
+  },
+  plugins: [
+    ...defaults.plugins,
+    new webpack.ProvidePlugin({
+      "React": "react",
+    }),
+  ],
 });

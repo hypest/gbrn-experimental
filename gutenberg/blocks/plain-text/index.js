@@ -1,7 +1,6 @@
 /**
  * External dependencies
  */
-import React, { Component } from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 import classnames from 'classnames';
 
