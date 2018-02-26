@@ -12,6 +12,8 @@ import {
   View
 } from 'react-native';
 
+import update from 'immutability-helper';
+
 import {
   getBlockType,
 } from './gutenberg/blocks/api';
@@ -30,7 +32,12 @@ export default class App extends Component<Props> {
   constructor(props) {
     super(props);
 
-    this.state = this.newStateObject("this is some source code");
+    var data = {}
+    for (i = 0; i < 2; i++){
+      data["id" + i] = this.newStateObject("this is some source code " + i);
+    }
+
+    this.state = data;
 
     registerCoreBlocks();
   }
@@ -45,8 +52,18 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <Code
-          attributes={{content: this.state.sourceCode}}
-          setAttributes={ ( attributes ) => { this.setState(this.newStateObject(attributes.content)); } }
+          attributes={{content: this.state.id0.sourceCode}}
+          setAttributes={ ( attributes ) => {
+            const data = update(this.state, {id0: {$set:this.newStateObject(attributes.content)}});
+            this.setState(data);
+          } }
+        />
+        <Code
+          attributes={{content: this.state.id1.sourceCode}}
+          setAttributes={ ( attributes ) => {
+            const data = update(this.state, {id1: {$set:this.newStateObject(attributes.content)}});
+            this.setState(data);
+          } }
         />
         <Text style={styles.welcome}>
           Welcome to React Native!
