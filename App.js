@@ -8,6 +8,7 @@ import { Component } from 'react';
 import {
   Platform,
   StyleSheet,
+  FlatList,
   Text,
   View
 } from 'react-native';
@@ -32,38 +33,43 @@ export default class App extends Component<Props> {
   constructor(props) {
     super(props);
 
-    var data = {}
+    var data = {items: []}
     for (i = 0; i < 2; i++){
-      data["id" + i] = this.newStateObject("this is some source code " + i);
+      data.items.push(new this.newStateObject(i, "this is some source code " + i));
     }
 
     this.state = data;
 
     registerCoreBlocks();
+  
+    const blockType = getBlockType('core/code');
+    Code = blockType.edit;
   }
 
-  newStateObject(content) {
-    return { sourceCode: content };
+  newStateObject(key, content) {
+    return { key: key, sourceCode: content };
   }
+
+  _keyExtractor = (item) => "id" + item.key;
+
+  _renderItem = ({item}) => (
+    <Code
+      attributes={{content: item.sourceCode}}
+      setAttributes={ ( attributes ) => {
+        const index = this.state.items.findIndex(k => k.key == item.key);
+        const items = update(this.state.items, {[index]: {$set: this.newStateObject(item.key, attributes.content)}});
+        this.setState({items});
+      } }
+    />
+  );
 
   render() {
-    const blockType = getBlockType('core/code');
-    const Code = blockType.edit;
     return (
       <View style={styles.container}>
-        <Code
-          attributes={{content: this.state.id0.sourceCode}}
-          setAttributes={ ( attributes ) => {
-            const data = update(this.state, {id0: {$set:this.newStateObject(attributes.content)}});
-            this.setState(data);
-          } }
-        />
-        <Code
-          attributes={{content: this.state.id1.sourceCode}}
-          setAttributes={ ( attributes ) => {
-            const data = update(this.state, {id1: {$set:this.newStateObject(attributes.content)}});
-            this.setState(data);
-          } }
+        <FlatList
+          data={this.state.items}
+          keyExtractor={this._keyExtractor}
+          renderItem={this._renderItem}
         />
         <Text style={styles.welcome}>
           Welcome to React Native!
