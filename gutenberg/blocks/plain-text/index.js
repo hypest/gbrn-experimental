@@ -17,6 +17,7 @@ function PlainText( { onChange, className, ...props } ) {
 	return (
 		<TextInput
 		    multiline={true}
+			onChangeText={ ( text ) => onChange( text ) }
 			{ ...props } />
 
 		// <TextareaAutosize

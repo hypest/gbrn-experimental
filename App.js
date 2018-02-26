@@ -29,7 +29,14 @@ type Props = {};
 export default class App extends Component<Props> {
   constructor(props) {
     super(props);
+
+    this.state = this.newStateObject("this is some source code");
+
     registerCoreBlocks();
+  }
+
+  newStateObject(content) {
+    return { sourceCode: content };
   }
 
   render() {
@@ -38,7 +45,9 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <Code
-          attributes={{content: "this is some source code"}} />
+          attributes={{content: this.state.sourceCode}}
+          setAttributes={ ( attributes ) => { this.setState(this.newStateObject(attributes.content)); } }
+        />
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
